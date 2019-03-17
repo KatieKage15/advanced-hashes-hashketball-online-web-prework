@@ -118,13 +118,16 @@ def game_hash
 end
 
 def num_points_scored(name)
-  find_player = players.find {|player|
-  player.fetch(:player_name) == name }
-  find_player.fetch(:points)
+  game_hash.each do |team_position, team_data|
+    team_data[:players].each do |player_name, player_data|
+      if player_name == name
+        return player_data[:points]
+      else
+        return nil
+      end
+    end
+  end
 end
 
 def shoe_size(name)
-  find_player = players.find {|player|
-  player.fetch(:player_name) == name }
-  find_player.fetch(:shoe)
-end
+
