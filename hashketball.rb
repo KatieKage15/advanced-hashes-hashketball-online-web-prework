@@ -1,3 +1,5 @@
+require "pry" 
+
 def game_hash
   basketball = {
     :home => {
@@ -113,4 +115,10 @@ def game_hash
      }
    }
  }
+end
+
+def num_points_scored(name)
+  find_player = players.find {|}player|
+  player.fetch(:player_name) == name }
+  find_player.fetch(:points)
 end
