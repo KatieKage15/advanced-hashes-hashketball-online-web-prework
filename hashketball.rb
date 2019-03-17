@@ -131,3 +131,14 @@ end
 binding.pry
 
 def shoe_size(name)
+  game_hash.each do |team_name, team_data|
+    team_data[:players].each do |player_name, player_data|
+      if player_name == name
+        return player_data[:shoe]
+      else 
+        return nil
+      end
+    end
+  end
+end
+
